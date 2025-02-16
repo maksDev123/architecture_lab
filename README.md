@@ -1,1 +1,1 @@
-# architecture_lab
+# architecture_labs

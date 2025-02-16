@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package messageservice;
+
+message GetMessagesRequest {}
+
+message GetMessagesResponse {
+    repeated string messages = 1;
+}
+
+message SendMessageRequest {
+    string message = 1;
+    string uuid = 2;
+}
+
+message SendMessageResponse {
+    string status = 1;
+}
+
+service LoggingService {
+    rpc GetMessages (GetMessagesRequest) returns (GetMessagesResponse);
+    rpc SaveMessage (SendMessageRequest) returns (SendMessageResponse);
+}
+
+
+message MessagesServiceRequest {}
+
+message MessagesServiceResponse {
+    string response = 1;
+}
+
+service MessageService {
+    rpc GetMessage (MessagesServiceRequest) returns (MessagesServiceResponse);
+}
