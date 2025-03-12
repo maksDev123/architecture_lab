@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
 import uuid
 import requests
-from services import LOGGING_SERVICE_URL, MESSAGES_SERVICE_URL
+from services import CONFIG_SERVER_URL
 import time
+import random
+import random
 
 app = Flask(__name__)
 
@@ -27,12 +29,24 @@ def http_retry_call(func, *args, **kwargs):
 @app.route("/get_messages", methods=["GET"])
 def get_messages():
     try:
-        response = http_retry_call(requests.get, f"{LOGGING_SERVICE_URL}/get_messages")
+
+        # Get available Logging Services IPs.
+        response = http_retry_call(requests.post, f"{CONFIG_SERVER_URL}/get-ip-adresses", json={"service": "logging-service"})
+        loggin_ips = response.json()["available_ips"]
+
+
+        response = http_retry_call(requests.get, f"{random.choice(loggin_ips)}/get_messages")
+
         saved_messages = response.json()["messages"]
         if response.status_code != 200:
             return jsonify({"error": f"Failed to receive saved messages: {response.text}", "status_code": response.status_code}), 500
 
-        response = http_retry_call(requests.get, f"{MESSAGES_SERVICE_URL}/message-service")
+        # Get available Message Services IPs.
+        response = http_retry_call(requests.post, f"{CONFIG_SERVER_URL}/get-ip-adresses", json={"service": "messages-service"})
+        message_ips = response.json()["available_ips"]
+
+
+        response = http_retry_call(requests.get, f"{random.choice(message_ips)}/message-service")
         text = response.text
 
         if response.status_code != 200:
@@ -58,7 +72,11 @@ def receive_message():
         }
 
         try:
-            response = http_retry_call(requests.post, f"{LOGGING_SERVICE_URL}/message", json=message_data)
+
+            response = http_retry_call(requests.post, f"{CONFIG_SERVER_URL}/get-ip-adresses", json={"service": "logging-service"})
+            loggin_ips = response.json()["available_ips"]
+
+            response = http_retry_call(requests.post, f"{random.choice(loggin_ips)}/message", json=message_data)
             
             if response.status_code == 200:
                 return "Message was saved.", 200
