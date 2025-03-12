@@ -1,4 +1,4 @@
-# Lab 1
+# Lab 3
 
 ### How to run
 Install dependencies:
@@ -8,19 +8,13 @@ pip3 install -r requirements.txt
 
 Run service (rest)
 ```
-python3 -m rest.facade-service
-python3 -m rest.logging-service
-python3 -m rest.messages-service
+python3.12 -m rest.facade-service
+python3.12 ./rest/logging-service.py --service_port 8081 --hazelcast_port 5701
+python3.12 ./rest/logging-service.py --service_port 8083 --hazelcast_port 5702
+python3.12 ./rest/logging-service.py --service_port 8084 --hazelcast_port 5703
+python3.12 -m rest.messages-service
+python3.12 -m rest.config-server
 ```
-
-Run service (gRPC)
-```
-cd grpc
-python3 ./facade-service
-python3 ./logging-service
-python3 ./messages-service
-```
-
 
 Run get and post request:
 ```
@@ -30,5 +24,3 @@ python3 -m client.client_get
 
 Additional hyperparameters: `MAX_RETRIES = 3, RETRY_DELAY = 2`
 
-### Additional tasks
-Implemented 2 additional tasks: retries and gRPC.
