@@ -4,12 +4,21 @@ import requests
 from services import CONFIG_SERVER_URL
 import time
 import random
-import random
+from kafka import KafkaProducer
+import json
+
 
 app = Flask(__name__)
 
 MAX_RETRIES = 3
 RETRY_DELAY = 2
+
+
+producer = KafkaProducer(
+    bootstrap_servers=['localhost:9092', 'localhost:9093', 'localhost:9094'],  # adjust if remote
+    value_serializer=lambda v: json.dumps(v).encode('utf-8')
+)
+
 
 def http_retry_call(func, *args, **kwargs):
     """
@@ -72,6 +81,7 @@ def receive_message():
         }
 
         try:
+            producer.send('my-topic-2partitions', message_data)
 
             response = http_retry_call(requests.post, f"{CONFIG_SERVER_URL}/get-ip-adresses", json={"service": "logging-service"})
             loggin_ips = response.json()["available_ips"]
