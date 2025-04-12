@@ -37,19 +37,18 @@ python3 -m client.client_get
 ```
 
 
+Additiona l hyperparameters: `MAX_RETRIES = 3, RETRY_DELAY = 2`
 
-Additional hyperparameters: `MAX_RETRIES = 3, RETRY_DELAY = 2`
 
-After running got the following results: messages splitted amoung 2 message-services:
+After running post got the following results: messages splitted amoung 2 message-services:
+![Image 12 04 2025 at 22 24](https://github.com/user-attachments/assets/7d269b21-b5f4-4480-9e19-9239ab8928e4)
 ![Image 12 04 2025 at 18 55 (2)](https://github.com/user-attachments/assets/3d8750c4-7ae4-4fc5-b5ba-47259e233975)
 ![Image 12 04 2025 at 18 55 (1)](https://github.com/user-attachments/assets/1a4546a3-3937-45f1-9c79-c62878fb1762)
 
 Get request to facade services chouses random message service and depicts saved messages:
 ![Image 12 04 2025 at 18 56](https://github.com/user-attachments/assets/a810e558-27ac-4675-b726-e3c1d75558a5)
 
-
-
-Replication
+### Replication
 1) Firstly I stoped message services to make messages save in queue.
 2) Stopped main broker (`broker1`) with `docker stop broker1`. Logs of stopped broker:
 ![Image 12 04 2025 at 19 35](https://github.com/user-attachments/assets/e79318d9-3a54-4b35-b3b2-36ad9cfd4704)
