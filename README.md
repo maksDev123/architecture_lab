@@ -42,6 +42,14 @@ Additiona l hyperparameters: `MAX_RETRIES = 3, RETRY_DELAY = 2`
 
 After running post got the following results: messages splitted amoung 2 message-services:
 ![Image 12 04 2025 at 22 24](https://github.com/user-attachments/assets/7d269b21-b5f4-4480-9e19-9239ab8928e4)
+
+Logs of logging services:
+![Image 12 04 2025 at 22 32 (2)](https://github.com/user-attachments/assets/133f811b-0d1c-4c26-9e8d-dc5d41d95519)
+![Image 12 04 2025 at 22 32 (1)](https://github.com/user-attachments/assets/7b4a9829-d4bc-4588-acba-2d9dcea12be7)
+![Image 12 04 2025 at 22 32](https://github.com/user-attachments/assets/b389b834-85e5-4d92-880f-9c5484504542)
+
+
+Logs of messages services:
 ![Image 12 04 2025 at 18 55 (2)](https://github.com/user-attachments/assets/3d8750c4-7ae4-4fc5-b5ba-47259e233975)
 ![Image 12 04 2025 at 18 55 (1)](https://github.com/user-attachments/assets/1a4546a3-3937-45f1-9c79-c62878fb1762)
 
