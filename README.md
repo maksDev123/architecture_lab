@@ -66,6 +66,8 @@ After starting services all of the were working, well accepting at least one mes
 <img width="1259" alt="Screenshot 2025-04-27 at 14 27 33" src="https://github.com/user-attachments/assets/5ca323b2-fb4f-49c3-a056-f4a513dd25db" />
 
 When I shutted down 2 services all of the messages went to last one service. Allowing everything to work correctly even when some services are unexpected
-<img width="839" alt="Screenshot 2025-04-27 at 14 29 59" src="https://github.com/user-attachments/assets/37dd1cdb-c5c2-44e4-9aa3-976d0ee4f318" />
-<img width="796" alt="Screenshot 2025-04-27 at 14 30 12" src="https://github.com/user-attachments/assets/afaf6d73-a044-42bc-81da-6cda29f5e7bc" />
+<img width="1007" alt="Screenshot 2025-04-27 at 14 44 43" src="https://github.com/user-attachments/assets/1e04b848-019a-425e-9319-d7bd7b2a23af" />
+<img width="895" alt="Screenshot 2025-04-27 at 14 44 53" src="https://github.com/user-attachments/assets/a713e433-0dcd-43f8-87e5-21f8fbb82b66" />
+<img width="870" alt="Screenshot 2025-04-27 at 14 45 04" src="https://github.com/user-attachments/assets/f3d1e1e5-0202-4c0a-8cea-d62aa13b7cca" />
+
 <img width="1255" alt="Screenshot 2025-04-27 at 14 29 03" src="https://github.com/user-attachments/assets/303ebf5a-a5bd-4680-b030-a3b78dee27cd" />
