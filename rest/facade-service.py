@@ -6,7 +6,6 @@ import random
 from kafka import KafkaProducer
 import json
 from utils import find_service, get_dictionary_info_by_key
-import consul
 
 app = Flask(__name__)
 

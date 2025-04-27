@@ -1,10 +1,12 @@
 import consul
 import json
 
+
+LAN_COMPUTER_ADRESS = ""
 def find_service(service_name):
     consul_client = consul.Consul()
 
-    index, services = consul_client.health.service(service_name, passing=True)
+    _, services = consul_client.health.service(service_name, passing=True)
 
     result = []
     for service in services:
@@ -28,7 +30,7 @@ def register_service(host, port, name):
         address=host,
         tags=['go'],
         check={
-            'http': f'http://192.168.0.103:{int(port)}/health',
+            'http': f'http://{LAN_COMPUTER_ADRESS}:{int(port)}/health',
             'interval': '10s'
         }
     )
