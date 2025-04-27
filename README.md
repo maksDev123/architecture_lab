@@ -60,7 +60,9 @@ python3 -m client.client_get
 Additiona l hyperparameters: `MAX_RETRIES = 3, RETRY_DELAY = 2`
 
 After starting services all of the were working, well accepting at least one message each.
-<img width="870" alt="Screenshot 2025-04-27 at 14 32 39" src="https://github.com/user-attachments/assets/b4959cc3-cb5e-42fb-b5df-53a099cfc9b3" />
+
+<img width="928" alt="Screenshot 2025-04-27 at 14 43 16" src="https://github.com/user-attachments/assets/6c358fcd-b386-4a08-94ec-a7d7774965d1" />
+
 <img width="1259" alt="Screenshot 2025-04-27 at 14 27 33" src="https://github.com/user-attachments/assets/5ca323b2-fb4f-49c3-a056-f4a513dd25db" />
 
 When I shutted down 2 services all of the messages went to last one service. Allowing everything to work correctly even when some services are unexpected
